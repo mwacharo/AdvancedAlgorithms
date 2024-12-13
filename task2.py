@@ -29,52 +29,6 @@ def allocate_driver(graph, takeaway_location):
     closest_driver = min(drivers, key=drivers.get)
     return drivers, closest_driver
 
-# Simplified graph input function
-# def get_custom_graph():
-#     print("\nCustom Graph Input Mode\n")
-#     graph = {}
-
-#     nodes = input("Enter all node names separated by commas (e.g., Takeaway, Driver1, Customer1): ").strip().split(',')
-#     nodes = [node.strip() for node in nodes if node.strip()]
-
-#     if len(nodes) < 1:
-#         print("Graph must have at least one node. Restarting...")
-#         return get_custom_graph()
-
-#     for node in nodes:
-#         edges = int(input(f"How many edges (connections) does {node} have? "))
-#         neighbors = []
-
-#         for _ in range(edges):
-#             neighbor = input(f"Enter neighbor for {node}: ").strip()
-#             if not neighbor:
-#                 print("Neighbor name cannot be empty. Please enter a valid name.")
-#                 continue
-#             try:
-#                 distance = int(input(f"Enter distance from {node} to {neighbor}: "))
-#                 if distance <= 0:
-#                     print("Distance must be greater than 0. Try again.")
-#                     continue
-#                 neighbors.append((neighbor, distance))
-#             except ValueError:
-#                 print("Invalid input. Distance must be a positive integer.")
-
-#         graph[node] = neighbors
-
-#     # Validate graph scenarios dynamically
-#     if "Takeaway" not in graph:
-#         print("Graph must include a 'Takeaway' node. Restarting...")
-#         return get_custom_graph()
-
-#     drivers = [node for node in graph if "Driver" in node]
-#     if not drivers:
-#         print("Warning: No drivers found in the graph. Deliveries may not be possible.")
-
-#     customers = [node for node in graph if "Customer" in node]
-#     if not customers:
-#         print("Warning: No customers found in the graph. Please ensure customers exist.")
-
-#     return graph
 
 def get_custom_graph():
     print("\nCustom Graph Input Mode\n")
